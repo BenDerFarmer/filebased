@@ -9,7 +9,7 @@ import (
 * https://github.com/golang/go/issues/41402
  */
 
-func Get(c echo.Context) error {
+func get(c echo.Context) error {
 	name := c.Param("user")
 	id := c.Param("id")
 	return c.String(200, name+" "+id)

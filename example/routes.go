@@ -3,44 +3,44 @@ package main
 
 import "github.com/labstack/echo/v4"
 
-func GET_routes_article_user_id(c echo.Context) error {
+func get_routes_article_user_id(c echo.Context) error {
 	name := c.Param("user")
 	id := c.Param("id")
 	return c.String(200, name+" "+id)
 }
-func GET_HELLO_routes_hello(c echo.Context) error {
+func get_hello_routes_hello(c echo.Context) error {
 	return c.String(200, "Hello")
 }
-func POST_NEW_routes_user_new(c echo.Context) error {
+func post_new_routes_user_new(c echo.Context) error {
 	return c.String(200, "post new user")
 }
-func POST_routes_user_user(c echo.Context) error {
+func get_routes_user_user(c echo.Context) error {
 	name := c.Param("user")
 	return c.String(200, name)
 }
-func PUT_routes_user_user(c echo.Context) error {
+func post_routes_user_user(c echo.Context) error {
 	name := c.Param("user")
 	return c.String(200, name)
 }
-func DELETE_routes_user_user(c echo.Context) error {
+func put_routes_user_user(c echo.Context) error {
 	name := c.Param("user")
 	return c.String(200, name)
 }
-func GET_routes_user_user(c echo.Context) error {
+func delete_routes_user_user(c echo.Context) error {
 	name := c.Param("user")
 	return c.String(200, name)
 }
-func GET_WORLD_routes_world(c echo.Context) error {
+func get_world_routes_world(c echo.Context) error {
 	return c.String(200, "World")
 }
 
 func registerRoutes(e *echo.Echo) {
-	e.GET("article/:user/:id", GET_routes_article_user_id)
-	e.GET("hello", GET_HELLO_routes_hello)
-	e.POST("user/new", POST_NEW_routes_user_new)
-	e.POST("user/:user", POST_routes_user_user)
-	e.PUT("user/:user", PUT_routes_user_user)
-	e.DELETE("user/:user", DELETE_routes_user_user)
-	e.GET("user/:user", GET_routes_user_user)
-	e.GET("world", GET_WORLD_routes_world)
+	e.GET("article/user/id", get_routes_article_user_id)
+	e.GET("hello", get_hello_routes_hello)
+	e.POST("user/new", post_new_routes_user_new)
+	e.GET("user/user", get_routes_user_user)
+	e.POST("user/user", post_routes_user_user)
+	e.PUT("user/user", put_routes_user_user)
+	e.DELETE("user/user", delete_routes_user_user)
+	e.GET("world", get_world_routes_world)
 }
