@@ -51,16 +51,18 @@ To register a path parameters append the file name with Colon `user:.go` or pref
 
 ## Caveats
 
-- This tool has to be extcute everytime you changed a file in the routes directory (use [air](https://github.com/air-verse/air))
+- This tool has to be execute everytime you changed a file in the routes directory (use [air](https://github.com/air-verse/air))
 - This tool could merge only files from one directory using the specified package name.
 - This tool does not check for syntax errors, so make sure that your code is syntactically correct before merging the files.
-- The tool does not check for **yet** conflicts between files, so you need to make sure that there are no conflicts manually.
+- The tool does not check for conflicts between files **yet**, so you need to make sure that there are no conflicts manually.
 
 ## Credits
 
 A big thank you to **mrsombre** for their incredible work on the [original project](https://github.com/mrsombre/codingame-golang-merger),
 which served as the foundation for this tool. Without their contributions,
 this project wouldn’t have been possible.
+
+Thank you, [PPTide](https://github.com/PPTide), for taking the time to review the code! Your insights and feedback are greatly appreciated.
 
 ## Contributing
 

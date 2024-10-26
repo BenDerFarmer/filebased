@@ -11,9 +11,9 @@ const version = "0.1.0"
 
 func main() {
 
-	outfile_name := flag.StringP("output", "o", "routes", "Output file name (without .go)")
-	routes_dir := flag.StringP("input", "i", "./routes", "directory of your route files")
-	pkg_name := flag.StringP("package", "p", "main", "the name of your package where the server is defined")
+	outfileName := flag.StringP("output", "o", "routes", "Output file name (without .go)")
+	routesDir := flag.StringP("input", "i", "./routes", "directory of your route files")
+	pkgName := flag.StringP("package", "p", "main", "the name of your package where the server is defined")
 
 	showHelp := flag.BoolP("help", "h", false, "Show usage summary")
 	showVersion := flag.BoolP("version", "v", false, "Show version")
@@ -31,10 +31,10 @@ func main() {
 		os.Exit(0)
 	}
 
-	if err := internal.Build(*routes_dir, *outfile_name, *pkg_name); err != nil {
+	if err := internal.Build(*routesDir, *outfileName, *pkgName); err != nil {
 		fmt.Printf("Filebased Error: %s", err)
 		os.Exit(1)
 	}
 
-	fmt.Printf("Filebased: %s.go was successfully generated.\n", *outfile_name)
+	fmt.Printf("Filebased: %s.go was successfully generated.\n", *outfileName)
 }
