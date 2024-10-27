@@ -33,7 +33,6 @@ func Build(inputDir string, outputFileName string, pkgName string) error {
 	for _, decl := range funcs {
 
 		name := decl.Name.Name
-		fmt.Println(name)
 
 		split := strings.Split(name, "_")
 
@@ -186,7 +185,7 @@ func (m *Merger) parseFile(path string) error {
 			}
 			// add path to function name when http verb
 			funcName := decl.Name.Name
-			if slices.Contains(httpVerbs, strings.Split(funcName, "_")[0]) {
+			if slices.Contains(httpVerbs, strings.ToLower(strings.Split(funcName, "_")[0])) {
 
 				route := strings.ReplaceAll(strings.TrimSuffix(path, ".go"), "/", "_")
 
