@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-var httpVerbs = []string{"get", "post", "put", "delete"}
+var httpVerbs = []string{"get", "head", "options", "trace", "put", "delete", "post", "patch", "connect"}
 
 func Build(inputDir string, outputFileName string, pkgName string) error {
 
