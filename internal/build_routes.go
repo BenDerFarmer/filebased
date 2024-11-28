@@ -44,6 +44,14 @@ func Build(inputDir string, outputFileName string, pkgName string) error {
 
 				decl.Name.Name = strings.Join(newName, "_")
 			}
+			if element[len(element)-1:] == ":" {
+
+				newName := split
+				newName[index] = element[:len(element)-1]
+
+				decl.Name.Name = strings.Join(newName, "_")
+			}
+
 		}
 
 		funcName := decl.Name.Name
