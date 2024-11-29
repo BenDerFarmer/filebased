@@ -197,17 +197,19 @@ func (m *Merger) parseFile(path string) error {
 
 				route := strings.ReplaceAll(strings.TrimSuffix(path, ".go"), "/", "_")
 
-				if route[len(route)-1:] == ":" {
+				section := strings.Split(route, "_")
 
-					split := strings.Split(route, "_")
-					element := split[len(split)-1]
-
-					route = strings.Join(split[0:len(split)-1], "_") + "_:" + element[0:len(element)-1]
-
+				for index, element := range section {
+					if element[len(element)-1:] == ":" {
+						section[index] = ":" + element[:len(element)-1]
+					}
 				}
+
+				route = strings.Join(section, "_")
 
 				// look if there is a problem with windows IDK :)
 				decl.Name.Name = funcName + "_" + route
+
 			}
 
 			m.addedFunc[name] = decl
