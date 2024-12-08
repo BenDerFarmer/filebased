@@ -9,12 +9,12 @@ especially for teams or projects that prefer keeping routing logic out of the ma
 ## Installation
 
 ```sh
-go install github.com/ChaotenHG/filebased/cmd/filebased@latest
+go install github.com/BenDerFarmer/filebased/cmd/filebased@latest
 ```
 
 ## Usage
 
-To get started, you can either clone the [template project](https://github.com/ChaotenHG/filebased-template/) or create a new one from scratch. The recommended file structure can be found in the provided example.
+To get started, you can either clone the [template project](https://github.com/BenDerFarmer/filebased-template/) or create a new one from scratch. The recommended file structure can be found in the provided example.
 
 Once everything is set up, simply run the following command to generate the necessary files:
 
